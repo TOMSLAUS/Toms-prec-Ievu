@@ -3,8 +3,11 @@ import 'dart:async';
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 
 
@@ -134,8 +137,20 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                           }
                         },
                         child: Container(
-                          color: Colors.red.withOpacity(0.1),
                           height: height,
+                          width: width,
+
+                          child: Center(
+                              child: AutoSizeText("Toms prec Ievu",
+                                style: GoogleFonts.dancingScript(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                ),
+                                minFontSize: 20,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                          ),
                         ),
                       ),
                     ],
@@ -152,7 +167,47 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
-                      color: Colors.green.withOpacity(0.2),
+                      child: Row(
+                        children: [
+                          Container(
+                          width: width/2,
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Kur",
+                                style: TextStyle(fontSize: 30, color: Colors.white),
+                                ),
+                                Divider(height: 10,),
+                                Text(
+                                  "Laulību ceremonija notiks āgenskalna baznīcā.",
+                                  style: TextStyle(fontSize: 20, color: Colors.white),
+                                ),
+
+
+                              ],
+                            ),
+
+                          ),
+                          Container(
+                            width: width/2,
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Kad",
+                                  style: TextStyle(fontSize: 30, color: Colors.white),
+                                ),
+                                Divider(height: 10,),
+                                Text(
+                                  "Laulību ceremonija notiks 2021. gada 16 jūlijā.",
+                                  style: TextStyle(fontSize: 20, color: Colors.white),
+                                ),
+
+                              ],
+                            ),
+
+                          ),
+                        ],
+                      ),
                       height: height,
                     ),
                   ),
@@ -168,10 +223,24 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
-                      color: Colors.red.withOpacity(0.2),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF000000).withOpacity(0.1), Color(0xFF092742).withOpacity(0.5)]
+                          )
+                      ),
                       height: height,
+                      width: width,
+                      child: Column(
+                        children: [
+                          Text("Svinību vieta", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          Divider(height: 20,),
+                          ClipOval(child:Image.asset("images/bersas.jpg"))
+                        ],
+                      ),
                     ),
-                  ),
+                    ),
                   VisibilityDetector(
                     key: Key('4'),
                     onVisibilityChanged: (visibilityInfo) {
@@ -184,7 +253,13 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
-                      color: Colors.green.withOpacity(0.2),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF092742).withOpacity(0.5), Color(0xFF1A4C78).withOpacity(1)]
+                          )
+                      ),
                       height: height,
                     ),
                   ),
@@ -202,7 +277,13 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
-                      color: Colors.red.withOpacity(0.2),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF1A4C78), Color(0xFF3475AD)]
+                          )
+                      ),
                       height: height,
                     ),
                   ),
@@ -218,7 +299,13 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
-                      color: Colors.green.withOpacity(0.2),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Color(0xFF3475AD), Color(0xFF468FCF)]
+                          )
+                      ),
                       height: height,
                     ),
                   ),
@@ -234,7 +321,9 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
-                      color: Colors.red.withOpacity(0.2),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF468FCF)
+                      ),
                       height: height,
                     ),
                   ),
@@ -249,9 +338,17 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                         });
                       }
                     },
-                    child: Container(
-                      color: Colors.green.withOpacity(0.2),
-                      height: height,
+                    child: Stack(
+                      children : [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xFF468FCF)
+                          ),
+                          height: height,
+                        ),
+
+
+                      ]
                     ),
                   ),
                 ],
