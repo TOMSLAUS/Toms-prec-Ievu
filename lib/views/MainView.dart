@@ -236,7 +236,21 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                         children: [
                           Text("Svinību vieta", style: TextStyle(fontSize: 30, color: Colors.white),),
                           Divider(height: 20,),
-                          ClipOval(child:Image.asset("images/bersas.jpg"))
+                          ClipOval(child:Image.asset("assets/images/bersas.jpg",),),
+                          Divider(height: 20,),
+                          Text("Bēršas", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          Divider(height: 20,),
+                          Container(
+                            width: width - (width/5),
+                            child: Center(
+                              child: Text("Mazmežotnes muiža - brīnišķīga vieta pie dabas, piedāvājot viesiem nakšņošanu"
+                                  " muižas viesnīcā, gardu ēdināšanu gan restorānā, gan lielos pasākumos, "
+                                  "kā arī plašas telpas svinībām, kāzām un semināriem, spa kompleksu ar dažādām pirtīm, "
+                                  "vannām un masāžām, bet aktīvās atpūtas cienītājiem un dabas baudītājiem braucienus ar velosipēdiem,"
+                                  " laivām un pastaigas pa dabas taku un apkārtnes celiņiem."
+                                , style: TextStyle(fontSize: 20, color: Colors.white),),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -253,6 +267,32 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+
+                            children: [
+                              Container(width: 130, height: 130,color: Colors.white,),
+                              Divider(height: 20,),
+                              Text("Toms", style: TextStyle(fontSize: 30, color: Colors.white),),
+                              Divider(height: 20,),
+                              Text("Līgavainis", style: TextStyle(fontSize: 15, color: Colors.white),),
+                            ],
+                          ),
+
+                          Column(
+
+                            children: [
+                              Container(width: 130, height: 130,color: Colors.white,),
+                              Divider(height: 20,),
+                              Text("Ieva", style: TextStyle(fontSize: 30, color: Colors.white),),
+                              Divider(height: 20,),
+                              Text("Līgava", style: TextStyle(fontSize: 15, color: Colors.white),),
+                            ],
+                          )
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
