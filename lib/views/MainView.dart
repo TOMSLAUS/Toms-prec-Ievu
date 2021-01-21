@@ -111,6 +111,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
             SingleChildScrollView(
               controller: _scrollController,
               child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Stack(
                     children: [
@@ -168,10 +169,13 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                     },
                     child: Container(
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
                           width: width/2,
                             child: Column(
+
                               children: [
                                 Text(
                                   "Kur",
@@ -191,6 +195,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                           Container(
                             width: width/2,
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
                                   "Kad",
@@ -233,6 +238,8 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       height: height,
                       width: width,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text("Svinību vieta", style: TextStyle(fontSize: 30, color: Colors.white),),
                           Divider(height: 20,),
@@ -269,6 +276,7 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                     child: Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Column(
 
@@ -317,6 +325,35 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
+                      child: Column(
+                        children: [
+                          Text("Vedēji", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          Divider(height: 30,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                          Column(
+
+                          children: [
+                          Container(width: 130, height: 130,color: Colors.white,),
+                          Divider(height: 20,),
+                          Text("Mārtiņš", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          ],
+                    ),
+
+                    Column(
+
+                          children: [
+                            Container(width: 130, height: 130,color: Colors.white,),
+                            Divider(height: 20,),
+                            Text("Laura", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          ],
+                    )
+                            ],
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
@@ -339,6 +376,51 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
+                       child: Column(
+                    children: [
+                    Text("Ģimene", style: TextStyle(fontSize: 30, color: Colors.white),),
+                    Divider(height: 30,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+
+                          children: [
+                            Container(width: 130, height: 130,color: Colors.white,),
+                            Divider(height: 20,),
+                            Text("Arnis", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          ],
+                        ),
+
+                        Column(
+
+                          children: [
+                            Container(width: 130, height: 130,color: Colors.white,),
+                            Divider(height: 20,),
+                            Text("Ineta", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          ],
+                        ),
+                        Column(
+
+                          children: [
+                            Container(width: 130, height: 130,color: Colors.white,),
+                            Divider(height: 20,),
+                            Text("Armands", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          ],
+                        ),
+                        Column(
+
+                          children: [
+                            Container(width: 130, height: 130,color: Colors.white,),
+                            Divider(height: 20,),
+                            Text("Kristīne", style: TextStyle(fontSize: 30, color: Colors.white),),
+                          ],
+                        )
+                      ],
+                    ),
+                    ],
+                  ),
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topCenter,
@@ -361,6 +443,11 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
                       }
                     },
                     child: Container(
+                      child: Column(
+                        children: [
+                          Text("Reģistrācija", style: TextStyle(fontSize: 30, color: Colors.white),),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                         color: Color(0xFF468FCF)
                       ),
