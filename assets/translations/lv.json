@@ -1,0 +1,50 @@
+
+{
+  "title": "Toms prec Ievu",
+  "where":{
+  "title": "Kur",
+    "text":"Laulību ceremonija notiks Torņkalna baznīcā, Rīgas Lutera draudzē, Torņkalna ielā 5, Rīgā. Ballīte visas nakts garumā notiks viesu namā “Bēršas”, Siguldā."
+  },
+
+
+  "when":{
+    "title": "Kad",
+    "text":"Laulību ceremonija notiks 16.07.2021., plkst. 12:00. Lūgums ierasties 10 – 15 min pirms ceremonijas sākuma. Ierašanās viesu namā “Bēršas” no plkst. 17:00."
+  },
+
+  "place":{
+    "title": "Svinību vieta",
+    "text":"Rezidence Bēršas – svinību vieta Gaujas senlejā. Miers, daba un senatnes elpas klātbūtne ir tas, kas padara šo vietu īpašu. Būsim priecīgi svinēt kāzas vasarā, brīvā dabā, Turaidas pils pakājē, vietā, kuras apkārtnē risinājās leģendām apvītie notikumi ar Turaidas Rozi. Visiem viesiem ir iespēja nakšņot viesu namā, lai pilnībā ļautos svinībām."
+  },
+
+  "people":{
+    "groom": "Līgavainis",
+    "bride":"Līgava",
+    "bestMan" : "Vedējtēvs",
+    "maidOfHonnor" : "Vedējmāte",
+    "parents" : "Vecāki"
+  },
+
+  "rsvp" : "Reģistrācija",
+  "card1Title" : "Lūgums apstiprināt savu ierašanos, aizpildot reģistrāciju!",
+  "name" : "Vārds",
+  "lastName" : "Uzvārds",
+  "email": "E-pasts (lai varam sazināties organizatorisku izmaiņu gadījumā)",
+  "phoneNumber" : "Tel. Nr.",
+  "guestList" : "Ja ielūgums adresēts ģimenei vai vēlies pievienot savu +1, lūgums norādīt pārējo viesu vārdus!",
+  "stayingNight" :  "Vai būs niepieciešama naktsmītne viesu namā  “Bēršas“?",
+  "alkoTitle": "Kādam alkoholiskam dzērienam dod priekšroku?",
+
+  "whiskey": "Viskijs",
+  "rum": "Rums",
+  "cognac" : "Konjaks",
+  "vodka": "Degvīns",
+  "jin": "Džins",
+  "champagne": "Šampanietis",
+  "whiteVine": "Baltvīns",
+  "redVine" : "Sarkanvīns",
+  "beer": "Alus",
+  "sendForm": "Tiekamies kāzās!",
+  "gift" : "Kāzu dāvana nav obligāta, taču, ja trūkst iedvesmas, mēs priecāsimies par viesu ieguldījumu mūsu sapņu kāzu ceļojumā! \uD83D\uDE0A",
+  "thankYou" : "Paldies, Tava anketa ir saņemta!"
+}

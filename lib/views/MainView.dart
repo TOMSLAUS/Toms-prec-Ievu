@@ -16,7 +16,8 @@ import 'package:visibility_detector/visibility_detector.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_sinusoidals/flutter_sinusoidals.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MainView extends StatefulWidget {
   static const id = "MainView";
@@ -37,6 +38,10 @@ class _MainViewState extends State<MainView> with TickerProviderStateMixin {
   var textStyle3 = GoogleFonts.judson(
     color: Colors.white,
     fontSize: 20,
+  );
+  var thankYouTextStyle = GoogleFonts.judson(
+    color: Colors.white,
+    fontSize: 40,
   );
   var mainTitle = GoogleFonts.dancingScript(
     color: Colors.white,
@@ -69,6 +74,7 @@ Color unselectedButton = Colors.blue;
   Animation _satelliteAnimation;
   AnimationController _satelliteController;
   ConfettiController _controllerBottomCenter;
+  String thankYouText = "";
 
   _scrollListener() {
     position = _scrollController.position.pixels;
@@ -85,7 +91,7 @@ Color unselectedButton = Colors.blue;
 
   Future<http.Response>newGuest(String name,String lastName, String email, String phoneNumber, String guestNames,
   bool whiskey, bool rum, bool cognac, bool vodka, bool jin, bool champagne, bool whiteVine, bool redVine, bool beer, bool stayingNight) async {
-    var po = await http.post(
+  /*  var po = await http.post(
       "https://tomsprecievu.lv/tpi.php",
       body: {
         'name': name,
@@ -107,7 +113,7 @@ Color unselectedButton = Colors.blue;
     );
     print(po.body);
     print(po.statusCode);
-  }
+  */}
 
 
 
@@ -215,13 +221,31 @@ Color unselectedButton = Colors.blue;
                         child: Container(
                           height: height,
                           width: width,
-                          child: Center(
-                              child: AutoSizeText("Toms prec Ievu",
-                                style: mainTitle,
-                                minFontSize: 20,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                right: 20,
+                                  top: 20,
+                                  child: Row(
+                                    children: [
+                                      TextButton(onPressed: (){
+                                        context.locale = Locale('lv');
+                                      }, child: Image.asset("assets/images/latvia.png",),
+                                      ),
+                                      TextButton(onPressed: (){
+                                        context.locale = Locale('en');
+                                      }, child: Image.asset("assets/images/us.png",),
+                                      )
+                                    ],
+                                  )),
+                              Center(
+                                child: Text("title",
+                                  style: mainTitle,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ).tr(),
+                            ),
+                        ]
                           ),
                         ),
                       ),
@@ -251,14 +275,14 @@ Color unselectedButton = Colors.blue;
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Kur",
+                                  "where.title",
                                 style: titleStyle2
-                                ),
+                                ).tr(),
                                 Divider(height: 20,),
                                 Text(
-                                  "Laulību ceremonija notiks Torņkalna baznīcā, Rīgas Lutera draudzē, Torņkalna ielā 5, Rīgā. \nBallīte visas nakts garumā notiks viesu namā “Bēršas”, Siguldā.",
+                                  "where.text",
                                   style: textStyle2,
-                                ),
+                                ).tr(),
                               ],
                             ),
 
@@ -270,14 +294,14 @@ Color unselectedButton = Colors.blue;
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Kad",
+                                  "when.title",
                                   style: titleStyle2
-                                ),
+                                ).tr(),
                                 Divider(height: 10,),
                                 Text(
-                                  "Laulību ceremonija notiks 16.07.2021., \nplkst. 12:00. Lūgums ierasties 10 – 15 min pirms ceremonijas sākuma. \nIerašanās viesu namā “Bēršas” no plkst. 17:00.",
+                                  "when.text",
                                   style: textStyle2,
-                                ),
+                                ).tr(),
 
                               ],
                             ),
@@ -313,7 +337,7 @@ Color unselectedButton = Colors.blue;
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("Svinību vieta", style: titleStyle2,),
+                          Text("place.title", style: titleStyle2,).tr(),
                           Divider(height: 20,),
                           Container(
                               width: width/2,
@@ -324,8 +348,8 @@ Color unselectedButton = Colors.blue;
                           Container(
                             width: width - (width/5),
                             child: Center(
-                              child: Text("Rezidence Bēršas – svinību vieta Gaujas senlejā. Miers, daba un senatnes elpas klātbūtne ir tas, kas padara šo vietu īpašu. Būsim priecīgi svinēt kāzas vasarā, brīvā dabā, Turaidas pils pakājē, vietā, kuras apkārtnē risinājās leģendām apvītie notikumi ar Turaidas Rozi. Visiem viesiem ir iespēja nakšņot visu namā, lai pilnībā ļautos svinībām. "
-                                , style: textStyle2,),
+                              child: Text("place.text"
+                                , style: textStyle2,).tr(),
                             ),
                           ),
                         ],
@@ -361,7 +385,7 @@ Color unselectedButton = Colors.blue;
                                   Divider(height: 20,),
                                   Text("Toms", style: titleStyle2,),
                                   Divider(height: 20,),
-                                  Text("Līgavainis", style: textStyle2,),
+                                  Text("people.groom", style: textStyle2,).tr(),
                                 ],
                               ),
 
@@ -374,7 +398,7 @@ Color unselectedButton = Colors.blue;
                                   Divider(height: 20,),
                                   Text("Ieva", style: titleStyle2,),
                                   Divider(height: 20,),
-                                  Text("Līgava", style: textStyle2,),
+                                  Text("people.bride", style: textStyle2,).tr(),
 
                                 ],
                               )
@@ -396,7 +420,7 @@ Color unselectedButton = Colors.blue;
                                       Divider(height: 20,),
                                       Text("Mārtiņš", style: titleStyle2,),
                                       Divider(height: 20,),
-                                      Text("Vedējtēvs", style: textStyle2,),
+                                      Text("people.bestMan", style: textStyle2,).tr(),
                                     ],
                                   ),
 
@@ -408,7 +432,7 @@ Color unselectedButton = Colors.blue;
                                       Divider(height: 20,),
                                       Text("Laura", style: titleStyle2,),
                                       Divider(height: 20,),
-                                      Text("Vedējmāte", style: textStyle2,),
+                                      Text("people.maidOfHonnor", style: textStyle2,).tr(),
                                     ],
                                   )
                                 ],
@@ -445,7 +469,7 @@ Color unselectedButton = Colors.blue;
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("Vecāki", style: titleStyle2,),
+                          Center(child: Text("people.parents", style: titleStyle2,).tr()),
                           Divider(height: 30,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -527,7 +551,7 @@ Color unselectedButton = Colors.blue;
                            crossAxisAlignment: CrossAxisAlignment.center,
                        mainAxisAlignment: MainAxisAlignment.start,
                        children: [
-                       Text("Reģistrācija", style: titleStyle2,),
+                       Text("rsvp", style: titleStyle2,).tr(),
                       Container(
                         color: cardBackGround,
                         width: width/1.5,
@@ -544,9 +568,9 @@ Color unselectedButton = Colors.blue;
                               children: <Widget>[
 
                                 Text(
-                                  "Lūgums apstiprināt savu ierašanos, aizpildot reģistrāciju!"
+                                  "card1Title"
                                   , style: textStyle3,
-                                ),
+                                ).tr(),
                               ],
                             ),
                           ),
@@ -555,7 +579,7 @@ Color unselectedButton = Colors.blue;
                               margin: EdgeInsets.symmetric(horizontal: 7),
                               child:   Column(
                                 children: [
-                                  Text("Vārds" , style: textStyle3,),
+                                  Text("name" , style: textStyle3,).tr(),
                                   Container(height: 15,),
                                   Container(
                                     color: Colors.blueAccent,
@@ -576,7 +600,7 @@ Color unselectedButton = Colors.blue;
                                       ),),
                                   ),
                                   Container(height: 30,),
-                                  Text("Uzvārds", style: textStyle3,),
+                                  Text("lastName", style: textStyle3,).tr(),
                                   Container(height: 15,),
                                   Container(
                                     color: Colors.blueAccent,
@@ -598,7 +622,7 @@ Color unselectedButton = Colors.blue;
                                       ),),
                                   ),
                                   Container(height: 30,),
-                                  Text("E-pasts (lai varam sazināties organizatorisku izmaiņu gadījumā)", style: textStyle3,),
+                                  Text("email", style: textStyle3,).tr(),
                                   Container(height: 15,),
                                   Container(
                                     color: Colors.blueAccent,
@@ -620,7 +644,7 @@ Color unselectedButton = Colors.blue;
                                       ),),
                                   ),
                                   Container(height: 30,),
-                                  Text("Tel. Nr.", style: textStyle3,),
+                                  Text("phoneNumber", style: textStyle3,).tr(),
                                   Container(height: 15,),
                                   Container(
                                     color: Colors.blueAccent,
@@ -644,7 +668,7 @@ Color unselectedButton = Colors.blue;
                                         ),
                                       ),),
                                   ),Container(height: 30,),
-                                  Text("Ja ielūgums adresēts ģimenei vai vēlies pievienot savu +1, lūgums norādīt pārējo viesu vārdus!" , style: textStyle3,),
+                                  Text("guestList" , style: textStyle3,).tr(),
                                   Container(height: 15,),
                                   Container(
                                     color: Colors.blueAccent,
@@ -670,18 +694,20 @@ Color unselectedButton = Colors.blue;
                                   ),
                                   Container(height: 40,),
 
-                                  Text("Vai būs niepieciešama naktsmītne viesu namā \"Bēršas\"?", style: textStyle3,),
+                                  Text("stayingNight", style: textStyle3,).tr(),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       TextButton(
                                         onPressed: (){setState(() {
+                                          stayingNight = true;
                                         yesButton = selectedButton;
                                         noButton = unselectedButton;
                                       });}, child: Card(color: yesButton, child: Container(height: 50,width: 50,child: Center(child: Text("Jā", style: textStyle3,))),),),
                                       Container(width: 20,),
                                       TextButton(
                                         onPressed: (){setState(() {
+                                          stayingNight = false;
                                         noButton = selectedButton;
                                         yesButton = unselectedButton;
                                       });}, child: Card(color:noButton, child: Container(height: 50,width: 50,child: Center(child: Text("Nē", style: textStyle3,))),),),
@@ -709,9 +735,9 @@ Color unselectedButton = Colors.blue;
                                  crossAxisAlignment: CrossAxisAlignment.start,
                                  children: <Widget>[
                                    Text(
-                                     "Kādam alkoholiskam dzērienam dod priekšroku?"
+                                     "alkoTitle"
                                      , style: textStyle3,
-                                   ),
+                                   ).tr(),
 
                                  ],
                                ),
@@ -723,7 +749,7 @@ Color unselectedButton = Colors.blue;
                                    children: [
                                      CheckboxListTile(
                                          value: whiskey,
-                                         title: Text("Viskijs", style: textStyle3,),
+                                         title: Text("whiskey", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                        setState(() {
                                          whiskey = value;
@@ -731,7 +757,7 @@ Color unselectedButton = Colors.blue;
                                      }),
                                      CheckboxListTile(
                                          value: rum,
-                                         title: Text("Rums", style: textStyle3,),
+                                         title: Text("rum", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              rum = value;
@@ -739,7 +765,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: cognac,
-                                         title: Text("Konjaks", style: textStyle3,),
+                                         title: Text("cognac", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              cognac = value;
@@ -747,7 +773,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: vodka,
-                                         title: Text("Degvīns", style: textStyle3,),
+                                         title: Text("vodka", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              vodka = value;
@@ -755,7 +781,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: jin,
-                                         title: Text("Džins", style: textStyle3,),
+                                         title: Text("jin", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              jin = value;
@@ -763,7 +789,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: champagne,
-                                         title: Text("Šampanietis", style: textStyle3,),
+                                         title: Text("champagne", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              champagne = value;
@@ -771,7 +797,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: whiteVine,
-                                         title: Text("Baltvīns", style: textStyle3,),
+                                         title: Text("whiteVine", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              whiteVine = value;
@@ -779,7 +805,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: redVine,
-                                         title: Text("Sarkanvīns", style: textStyle3,),
+                                         title: Text("redVine", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              redVine = value;
@@ -787,7 +813,7 @@ Color unselectedButton = Colors.blue;
                                          }),
                                      CheckboxListTile(
                                          value: beer,
-                                         title: Text("Alus", style: textStyle3,),
+                                         title: Text("beer", style: textStyle3,).tr(),
                                          onChanged: (bool value){
                                            setState(() {
                                              beer = value;
@@ -801,20 +827,45 @@ Color unselectedButton = Colors.blue;
                          ),
                          Container(height: 15,),
                          ElevatedButton(
-                           child: Text("Tiekamies kāzās!", style: textStyle3,),
+                           child: Text("sendForm", style: textStyle3,).tr(),
                            onPressed: (){
+                             setState(() {
+                               thankYouText = "thankYou".tr();
+                             });
                             // print(name+ lastName+email+ phoneNumber+ guestNames+ whiskey.toString()+ rum.toString());
                              newGuest(this.name, this.lastName, this.email, this.phoneNumber, this.guestNames, this.whiskey, this.rum, this.cognac, this.vodka, this.jin, this.champagne, this.whiteVine, this.redVine, this.beer, this.stayingNight);
                              _controllerBottomCenter.play();
-
+                             name = "";
+                             lastName = "";
+                             email = "";
+                             phoneNumber = "";
+                             guestNames = "";
+                             whiskey = false;
+                             rum = false;
+                             cognac = false;
+                             vodka = false;
+                             jin = false;
+                             champagne = false;
+                             whiteVine = false;
+                             redVine = false;
+                             beer = false;
                              },
+                         ),
+                         Container(height: 35,),
+
+                         Center(
+                           child: Container(
+                             width: width - (width/5),
+                             child: Text(thankYouText,
+                               style: thankYouTextStyle,),
+                           ),
                          ),
                          Container(height: 35,),
 
                          Container(
                            width: width - (width/5),
-                           child: Text("Kāzu dāvana nav obligāta, taču, ja trūkst iedvesmas, mēs priecāsimies par viesu ieguldījumu mūsu sapņu kāzu ceļojumā! 😊",
-                             style: textStyle2,),
+                           child: Text("gift",
+                             style: textStyle2,).tr(),
                          ),
                       ],
                     ),

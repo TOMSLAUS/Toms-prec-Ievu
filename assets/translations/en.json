@@ -1,0 +1,50 @@
+
+{
+  "title": "Toms & Ieva",
+  "where":{
+    "title": "Where",
+    "text":"Our wedding ceremony will happen in The Church of Luther, Torņkalna 5, Riga. For our international guests, transportation will be provided to and from the wedding ceremony. Dinner and dancing to follow at villa Bēršas, Sigulda. "
+  },
+
+
+  "when":{
+    "title": "When",
+    "text":"July 16, 2021 at 12pm. We kindly ask you to arrive 15-20 minutes early. Arrival at ‘Bēršas” from 5 pm."
+  },
+
+  "place":{
+    "title": " ",
+    "text":"Peace, the harmony of nature, and the presence of antiquity make this place special. We are excited to celebrate our wedding in summer, next to the Gauja valley, at the foot of the Turaida Castle, in the area, where legendary events involving the Rose of Turaida happened. We provide the hotel stay in “Bēršas” so that all our guests could enjoy the party to the fullest."
+  },
+
+  "people":{
+    "groom": "the groom",
+    "bride":"the bride",
+    "bestMan" : "best man",
+    "maidOfHonnor" : "maid of honor",
+    "parents" : "Our parents"
+  },
+
+  "rsvp" : "RSVP",
+  "card1Title" : "Please confirm your attendance by providing us with some information about yourself!",
+  "name" : "Name",
+  "lastName" : "Last name",
+  "email": "E-mail (we will inform you of any changes)",
+  "phoneNumber" : "Phone number",
+  "guestList" : "If the invitation is addressed to a Family or you want to inform us about your Plus-One, please list the names of all guests here:",
+  "stayingNight" :  "Do you require an accommodation at “Bēršas“?",
+  "alkoTitle": "Whats your preference of alcohol?",
+
+  "whiskey": "Whiskey",
+  "rum": "Rum",
+  "cognac" : "Cognac",
+  "vodka": "Vodka",
+  "jin": "Jin",
+  "champagne": "Champagne",
+  "whiteVine": "White vine",
+  "redVine" : "Red vine",
+  "beer": "Beer",
+  "sendForm": "Send!",
+  "gift" : "P.S. We hope you can join us in celebrating our marriage! Please know that your presence is the best gift you could provide, but should you feel inclined, we would be grateful for your contribution to our dream honeymoon! \uD83D\uDE0A",
+  "thankYou" : "Thank you, your answers have been submitted!"
+}
