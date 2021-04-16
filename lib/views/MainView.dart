@@ -91,7 +91,7 @@ Color unselectedButton = Colors.blue;
 
   Future<http.Response>newGuest(String name,String lastName, String email, String phoneNumber, String guestNames,
   bool whiskey, bool rum, bool cognac, bool vodka, bool jin, bool champagne, bool whiteVine, bool redVine, bool beer, bool stayingNight) async {
-  /*  var po = await http.post(
+    var po = await http.post(
       "https://tomsprecievu.lv/tpi.php",
       body: {
         'name': name,
@@ -113,7 +113,7 @@ Color unselectedButton = Colors.blue;
     );
     print(po.body);
     print(po.statusCode);
-  */}
+  }
 
 
 
