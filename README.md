@@ -5,6 +5,7 @@ I created this Wedding RSVP App using Flutter to make it easy for guests to RSVP
 💖 Why I Built This
 
 The usual RSVP process felt a bit impersonal, so I decided to create an app that would capture all the important details for my wedding in one place. I wanted my guests to feel the excitement of the event as they confirmed their attendance and to be able to add any preferences or details easily. This app became a unique part of my wedding planning!
+
 🌸 App Highlights
 
     Simple Guest RSVP – Guests can confirm their attendance in just a few steps.
@@ -22,12 +23,12 @@ Running the Project
 
     Clone the Repository
 
-git clone <repository_url>
-cd wedding_rsvp_app
-
+    git clone <repository_url>
+    cd wedding_rsvp_app
+    
 Install Dependencies
 
-flutter pub get
+    flutter pub get
 
 Run the App
 
