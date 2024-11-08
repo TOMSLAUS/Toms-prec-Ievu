@@ -1,7 +1,7 @@
-Here’s a personalized README tailored for showcasing your wedding RSVP app:
 💍 My Wedding RSVP App
 
 I created this Wedding RSVP App using Flutter to make it easy for guests to RSVP for my wedding. It was important for me to create a beautiful, straightforward app that would let my friends and family confirm their attendance with just a few taps. Building this app allowed me to add a personal touch to the RSVP process and made managing guest responses much easier!
+
 💖 Why I Built This
 
 The usual RSVP process felt a bit impersonal, so I decided to create an app that would capture all the important details for my wedding in one place. I wanted my guests to feel the excitement of the event as they confirmed their attendance and to be able to add any preferences or details easily. This app became a unique part of my wedding planning!
